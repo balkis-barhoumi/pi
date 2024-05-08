@@ -1,0 +1,36 @@
+
+    <style>
+        hr {
+            border: 1px solid black; /* Couleur de la ligne */
+            margin-top: 20px; /* Marge au-dessus de la ligne */
+            margin-bottom: 20px; /* Marge en dessous de la ligne */
+        }
+    </style>
+    <div class="card mb-4">
+    <div class="card-body">
+        <p class="mb-0">
+            <img src="{{ asset('Upload/')}}{{ r.image }}" width="600" /><br><br>
+            Sujet : {{ r.sujet }}<br>
+            Contenue :  {{ r.contenue }}<br>
+            User :  {{ r.idUser.nom }}<br>
+            Date :  {{ r.dateenv ? r.dateenv|date('Y-m-d') : '' }}<br>
+            Etat :{{ r.etat }}<br>
+            Type: {{ r.type }}<br>
+        </p>
+    </div>
+
+    {% if r.etat == "en attente" %}
+    {% else %}
+        <p>------------------------------------------------------</p>
+
+        Reponse :
+        <p class="mb-0">
+            Date :  {{ reps.date ? reps.date|date('Y-m-d') : '' }}<br>
+            Type: {{ reps.contenue }}<br>
+        </p>
+
+    {% endif %}
+
+    </div>
+
+

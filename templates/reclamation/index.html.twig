@@ -3,6 +3,12 @@
 {% block title %}Reclamation{% endblock %}
 
 {% block body %}
+    <link rel="stylesheet" href="{{ asset('bundles/mercuryseriesflashy/css/flashy.css') }}">
+    <script src="//code.jquery.com/jquery.js"></script>
+    <!-- Load Flashy default JavaScript -->
+    <script src="{{ asset('bundles/mercuryseriesflashy/js/flashy.js') }}"></script>
+    {{ include('@MercurySeriesFlashy/flashy.html.twig') }}
+
     <div class="row">
         {% for r in reclamations %}
             <div class="col-lg-3 col-sm-6" style="background: blue">
